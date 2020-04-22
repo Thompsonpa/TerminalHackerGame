@@ -1,13 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Hacker : MonoBehaviour
 {
 
     // Game configuration data
     const string menuHint = "You may type menu at any time.";
-    string[] level1Passwords = { "books", "aisle", "shelf", "password", "font", "borrow" };
-    string[] level2Passwords = { "prisoner", "handcuffs", "holster", "uniform", "arrest" };
-    string[] level3Passwords = { "starfield", "telescope", "environment", "exploration", "astronauts" };
+    string[] level1Passwords = { "Octopussy", "Pickle Rip", "Hoe Bot", "Turtle Reaper", "Eric Half Tree" };
+    string[] level2Passwords = { "Child Whipserer", "Master of Boots", "Eater of Pickles", "Machias Savings Bitch" };
+    string[] level3Passwords = { "Wielder of the Meme Beam", "Holder the Freehold Key", "Lord of the Stealthy Bois", "Moistes Dad in the World", "Big enough for a child", "Unlocker of Justin's Box" };
 
     // Game state
     int level;
@@ -25,10 +25,12 @@ public class Hacker : MonoBehaviour
     {
         currentScreen = Screen.MainMenu;
         Terminal.ClearScreen();
-        Terminal.WriteLine("What would you like to hack into?");
-        Terminal.WriteLine("Press 1 for the local library");
-        Terminal.WriteLine("Press 2 for the police station");
-        Terminal.WriteLine("Press 3 for NASA!");
+        Terminal.WriteLine("Guess the names of the one the call");
+        Terminal.WriteLine("Eric the FreeBird!");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Press 1 to warm up!");
+        Terminal.WriteLine("Press 2 ready for some pickles!");
+        Terminal.WriteLine("Press 3 i know this guy!");
         Terminal.WriteLine("Enter your selection:");
     }
 
@@ -61,9 +63,9 @@ public class Hacker : MonoBehaviour
             level = int.Parse(input);
             AskForPassword();
         }
-        else if (input == "007") // easter egg
+        else if (input == "eric") // easter egg
         {
-            Terminal.WriteLine("Please select a level Mr Bond!");
+            Terminal.WriteLine("Please select a level Daddy!");
         }
         else
         {
@@ -125,19 +127,16 @@ public class Hacker : MonoBehaviour
         switch (level)
         {
             case 1:
-                Terminal.WriteLine("Have a book...");
+                Terminal.WriteLine("mhm, ok your friends with Eric");
                 Terminal.WriteLine(@"
-    _______
-   /      //
-  /      //
- /_____ //
-(______(/           
+ __
+/0 \_______
+\__/-=' = '         
 "
                 );
                 break;
             case 2:
-                Terminal.WriteLine("You got the prison key!");
-                Terminal.WriteLine("Play again for a greater challenge.");
+                Terminal.WriteLine("mhm, best buds with this Guy?");
                 Terminal.WriteLine(@"
  __
 /0 \_______
@@ -147,13 +146,13 @@ public class Hacker : MonoBehaviour
                 break;
             case 3:
                 Terminal.WriteLine(@"
- _ __   __ _ ___  __ _
-| '_ \ / _` / __|/ _` |
-| | | | (_| \__ \ (_| |
-|_| |_|\__,_|___)\__,_|
+ __
+/0 \_______
+\__/-=' = '         
 "
                 );
-                Terminal.WriteLine("Welcome to NASA's internal system!");
+                Terminal.WriteLine("mhm, Like sicking Eric's Dick");
+                Terminal.WriteLine("for a living, GG!");
                 break;
             default:
                 Debug.LogError("Invalid level reached");
